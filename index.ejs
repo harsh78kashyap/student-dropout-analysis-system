@@ -1,0 +1,276 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Dropout Students</title>
+  <link rel="icon" type="image/png" href="/images/edudrop.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="Style.css">
+  <script src="/header.js" type="text/javascript" defer></script>
+  <script src="/footer.js" type="text/javascript" defer></script>
+</head>
+
+<body>
+
+  <header-component></header-component>
+
+
+  <main>
+
+    <!-- Sliding Images -->
+    <div id="intro">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="text">
+
+              <h1>Dropout Students Survey</h1>
+              <h3>Platform that provides precise analysis of dropout students.</h3>
+            </div>
+            <img
+              src="https://cache.careers360.mobi/media/articles/uploads/froala_editor/images/2021/7/2/education-ministry-udise-school-droput-st-sc-obc-featured-image.jpg"
+              alt="pic1">
+
+          </div>
+          <div class="swiper-slide">
+
+            <div class="text">
+
+              <h1>Dropout Students Survey</h1>
+              <h3>Platform that provides precise analysis of dropout students.</h3>
+            </div>
+            <img src="images/image1.jpg" alt="img1">
+          </div>
+          <div class="swiper-slide">
+
+            <div class="text">
+
+              <h1>Dropout Students Survey</h1>
+              <h3>Platform that provides precise analysis of dropout students.</h3>
+            </div>
+            <img src="images/image2.jpg" alt="img2">
+          </div>
+          <div class="swiper-slide">
+            <div class="text">
+
+              <h1>Dropout Students Survey</h1>
+              <h3>Platform that provides precise analysis of dropout students.</h3>
+            </div>
+            <img src="images/image3.jpg" alt="img3">
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+
+    <!-- Portal Buttons -->
+    <div class="portal">
+
+      <!-- Survey portal -->
+      <div class="work">
+        <i class="fa fa-poll"></i>
+        <p class="work-heading">Survey</p>
+        <p class="work-text">Click to view the dropout List.</p>
+        <button class="button"><a style="color:white; text-decoration:none; " href="/PreviousDropout">View</a></button>
+      </div>
+
+      <!-- school Portal -->
+      <div class="work">
+        <i class="fa fa-school"></i>
+        <p class="work-heading">Schools</p>
+        <p class="work-text">Enter as School.</p>
+        <button class="button" onclick="openForm()">Login</button>
+        <div class="center" id="myForm">
+          <h1>School Login</h1>
+          <!-- School Login Form -->
+          <form action="/schoollogin" method="post">
+            <div class="txt_field">
+              <input type="number" name="SchoolID" required>
+              <span></span>
+              <label>School ID</label>
+            </div>
+            <div class="txt_field">
+              <input type="password" name="password" required>
+              <span></span>
+              <label>Password</label>
+            </div>
+            <div class="pass"><a href="#">Forgot Password?</a></div>
+            <button type="submit" value="Login">Login</button>
+            <div class="signup_link">
+              Not a member? <a href="#">Signup</a>
+            </div>
+            <button type="button" class="btn_cancel" onclick="closeForm()">Close</button>
+            <hr>
+          </form>
+        </div>
+
+
+      </div>
+
+      <!-- Admin Popup -->
+      <div class="work">
+        <i class="fa fa-user"></i>
+        <p class="work-heading">Admin</p>
+        <p class="work-text">Enter as Admin.</p>
+        <button class="button" onclick="openadlog()">Login</button>
+        <div class="center" id="adlog">
+          <h1>Admin Login</h1>
+          <form action="/adminlogin" method="post">
+            <div class="txt_field">
+              <input type="text" name="adminame" required>
+              <span></span>
+              <label>Admin ID</label>
+            </div>
+            <div class="txt_field">
+              <input type="password" name="password" required>
+              <span></span>
+              <label>Password</label>
+            </div>
+            <div class="pass"><a href="#">Forgot Password?</a></div>
+            <button type="submit" value="Login">Login</button>
+            <div class="signup_link">
+              Not a member? <a href="#">Signup</a>
+            </div>
+            <button type="button" class="btn_cancel" onclick="closeadlog()">Close</button>
+            <hr>
+          </form>
+        </div>
+      </div>
+
+
+
+      <!-- Government Popup -->
+      <div class="work">
+        <i class="fa fa-university"></i>
+        <p class="work-heading">Government</p>
+        <p class="work-text">Enter as Government.</p>
+        <button class="button" onclick="opengovlog()">Login</button>
+        <div class="center" id="govlog">
+          <h1>Government Login</h1>
+          <form action="/govtlogin" method="post">
+            <div class="txt_field">
+              <input type="password" name="password" required>
+              <span></span>
+              <label>Password</label>
+            </div>
+            <div class="pass"><a href="#">Forgot Password?</a></div>
+            <button type="submit" value="Login">Login</button>
+            <div class="signup_link">
+              Not a member? <a href="#">Signup</a>
+            </div>
+            <button type="button" class="btn_cancel" onclick="closegovlog()">Close</button>
+            <hr>
+          </form>
+        </div>
+      </div>
+
+
+      <!-- Javascript Code -->
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script>
+        //admin popup js
+        function openadlog() {
+          document.getElementById("adlog").style.display = "block";
+        }
+        function closeadlog() {
+          document.getElementById("adlog").style.display = "none";
+        }
+        const adlog = document.getElementById("adlog")
+        window.onclick = (event) => {
+          if (!event.target.matches('.button')) {
+            if (adlog.style.display == "block") {
+              adlog.style.display = "none";
+            }
+          }
+        }
+        adlog.addEventListener('click', event => event.stopPropagation());
+
+        //governemnt popup js
+        function opengovlog() {
+          document.getElementById("govlog").style.display = "block";
+        }
+        function closegovlog() {
+          document.getElementById("govlog").style.display = "none";
+        }
+        const govlog = document.getElementById("govlog")
+        window.onclick = (event) => {
+          if (!event.target.matches('.button')) {
+            if (adlog.style.display == "block") {
+              adlog.style.display = "none";
+            }
+          }
+        }
+        govlog.addEventListener('click', event => event.stopPropagation());
+
+
+        function openForm() {
+          document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
+        const menu = document.getElementById("myForm")
+        window.onclick = (event) => {
+          if (!event.target.matches('.button')) {
+            if (menu.style.display == "block") {
+              menu.style.display = "none";
+            }
+          }
+        }
+        menu.addEventListener('click', event => event.stopPropagation());
+
+        let swiper = new Swiper(".mySwiper", {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          centeredSlides: true,
+          loop: true,
+          autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          grabCursor: true,
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      </script>
+    </div>
+
+    <!-- Modi Funny Photo -->
+    <div class="about">
+      <div class="about-text">
+        <h2>About</h2>
+        <h3>Right to education is key concern for government and at school level, drop out ratio is high due to poverty
+          and social, economic reasons. <br><br>If government have drop out student analysis on following different
+          categories, it will be very useful in framing different policies. <br><br> 1. School wise <br>2. Area wise
+          <br>3. Gender wise<br> 4. Caste wise <br>5. Age/standard wise <br><br>Expected Output: Focused interventions
+          on the high dropout rates.
+        </h3>
+      </div>
+      <img
+        src="/images/ph_24366_87877.jpg"
+        alt="pm with child">
+    </div>
+
+
+  </main>
+
+
+  <footer-component></footer-component>
+
+</body>
+
+</html>
